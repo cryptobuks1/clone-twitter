@@ -1,11 +1,12 @@
 <#import "parts/common.ftl" as c>
 
 <@c.page>
-List of users
+<div class="user_list">
+<h2>List of users</h2>
 
-<table>
+<table class="table_user_list">
     <thead>
-    <tr>
+    <tr class="text_user_list">
         <th>Name</th>
         <th>Role</th>
         <th></th>
@@ -16,9 +17,11 @@ List of users
     <tr>
         <td>${user.username}</td>
         <td><#list user.roles as role> ${role}<#sep>, </#list></td>
-        <td><a href="/user/${user.id}">Edit</a></td>
+        <td><a class="button_cvoi_user_list" href="/user/${user.id}">Edit</a></td>
+        <td><a class="button_cvoi_user_list" href="/user/${user.id}">Delete</a></td>
     </tr>
     </#list>
     </tbody>
 </table>
+</div>
 </@c.page>

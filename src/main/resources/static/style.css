@@ -1,4 +1,159 @@
 
-body {
-    color: #113;
+*, *:after, *:before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
+
+body {
+    font-family: "Montserrat", sans-serif;
+    height: auto;
+}
+
+.hiclass{
+    margin-top: 30px;
+    font-size: 72px;
+    text-transform: uppercase;
+    color: azure;
+}
+
+.infoproject{
+    margin-top: 150px;
+    font-size: 22px;
+    color: azure;
+}
+
+.greetingclass{
+    position: 0;
+    margin: 0;
+    background-color: cornflowerblue;
+    background-position: center center;
+    text-align:center;
+    min-height: 70vh;
+    width: 100%;
+
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+
+.user_list{
+    text-align: center;
+}
+
+.user_list h2{
+    font-size: 72px;
+    text-transform: uppercase;
+}
+
+.s{
+    display: block;
+    width: 100px;
+    height: 50px;
+    color: #ffffff;
+    border-radius: 24px;
+    background-color: darkslateblue;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.button_cvoi_user_list{
+    display: block;
+    width: 115px;
+    height: 50px;
+    color: #ffffff;
+    border-radius: 24px;
+    background-color: #32a1cf;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+.text_user_list{
+    margin-right: 5px;
+    margin-top: 50px;
+    font-size: 22px;
+    color: black;
+}
+
+.table_user_list{
+    margin-right: 350px;
+    margin-top: 100px;
+}
+
+
+.profile_container{
+    text-align: center;
+}
+
+
+.profile_name{
+    margin-top: 60px;
+    font-size: 72px;
+    text-transform: uppercase;
+    margin-bottom: 130px;
+}
+
+.button_profile{
+    margin-top: 50px;
+}
+
+
+.login_style{
+    text-align: center;
+}
+
+.zagolovok_login{
+    margin-top: 30px;
+    font-size: 72px;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+}
+
+.regist_newuser{
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+.button_login_1{
+    margin-right: 20px;
+    margin-top: 70px;
+}
+
+.button_login_2{
+    margin-left: 80px;
+}
+
+.login_name{
+    margin-left: 100px;
+}
+
+.login_password{
+    margin-left: 100px;
+}
+
+login_recaptcha{
+    margin-left: 300px;
+}
+
+
+.zagolovok_useredit{
+    margin-top: 30px;
+    font-size: 72px;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+}
+
+
+

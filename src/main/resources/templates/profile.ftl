@@ -1,9 +1,10 @@
 <#import "parts/common.ftl" as c>
 
 <@c.page>
-<h5>${username}</h5>
+<div class="profile_container">
+<h5 class="profile_name">${username}</h5>
     ${message?ifExists}
-<form method="post">
+<form method="post" class="profile_form">
     <div class="form-group row">
         <label class="col-sm-2 col-form-label">Password:</label>
         <div class="col-sm-6">
@@ -17,6 +18,7 @@
         </div>
     </div>
     <input type="hidden" name="_csrf" value="${_csrf.token}" />
-    <button class="btn btn-primary" type="submit">Save</button>
+    <button class="button_cvoi button_profile btn btn-primary" type="submit">Save</button>
 </form>
+</div>
 </@c.page>

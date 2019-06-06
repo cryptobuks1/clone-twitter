@@ -36,7 +36,7 @@ public class UserSevice implements UserDetailsService {
         return user;
     }
 
-    public boolean addUser(User user) {
+    public boolean addUser(User user) { ///////////
         User userFromDb = userRepo.findByUsername(user.getUsername());
 
         if (userFromDb != null) {
@@ -55,7 +55,7 @@ public class UserSevice implements UserDetailsService {
         return true;
     }
 
-    private void sendMessage(User user) {
+    public void sendMessage(User user) { //////////////
         if (!StringUtils.isEmpty(user.getEmail())) {
             String message = String.format(
                     "Hello, %s! \n" +
@@ -68,7 +68,7 @@ public class UserSevice implements UserDetailsService {
         }
     }
 
-    public boolean activateUser(String code) {
+    public boolean activateUser(String code) { ///////////////
         User user = userRepo.findByActivationCode(code);
 
         if (user == null) {
@@ -86,7 +86,9 @@ public class UserSevice implements UserDetailsService {
         return userRepo.findAll();
     }
 
-    public void saveUser(User user, String username, Map<String, String> form) {
+
+
+    public void saveUser(User user, String username, Map<String, String> form) { ///////////
         user.setUsername(username);
 
         Set<String> roles = Arrays.stream(Role.values())

@@ -3,7 +3,6 @@
 <@c.page>
 <div class="user_list">
 <h2>List of users</h2>
-
 <table class="table_user_list">
     <thead>
     <tr class="text_user_list">

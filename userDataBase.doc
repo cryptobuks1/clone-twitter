@@ -1,0 +1,28 @@
+Id: 1,
+Activation Code: null,
+Active: 1,
+Email: mihasev.vlad@mail.ru
+Password: $2a$08$mnGrNa6VIEWFfPEElhVrE.df9UCYcI87nTByob8Wt20zl61loHH3W
+Username: admin
+
+Id: 2,
+Activation Code: null,
+Active: 1,
+Email: mihasev.vlad@mail.ru
+Password: $2a$08$2UVPRJPqIPcTHOj9kZZVPuTJeOyIHaMSGrT7Rm9DBBTg1WQl/8sKW
+Username: wlad
+
+Id: 4,
+Activation Code: 90c4ce0c-9941-4de0-81ee-521dbe22868c,
+Active: 1,
+Email: mihasev.vlad@mail.ru
+Password: $2a$08$CP2zRHhE04p99pkOgG8n5eiv66g3bdKreR14/k8aF/Bp2yVeYt7Zy
+Username: ararat
+
+Id: 6,
+Activation Code: baa74e44-d52e-4b6c-8a20-7e6035fa19c6,
+Active: 1,
+Email: mihasev.vlad@mail.ru
+Password: $2a$08$ChPGIhbIgLJpO3IgqN.uSuzzYcganMu98uGLIbrR.lDuQ0RJQXKlu
+Username: ahmedBrat
+

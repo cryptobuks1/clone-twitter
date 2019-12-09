@@ -80,6 +80,23 @@ body {
     margin-left: 15px;
 }
 
+.button_cvoi_user_list_down{
+    display: block;
+    width: 115px;
+    height: 50px;
+    color: #ffffff;
+    border: 1px solid black;
+    background-color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-bottom: -45px;
+    cursor: pointer;
+}
+
 .text_user_list{
     margin-right: 5px;
     margin-top: 50px;

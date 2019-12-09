@@ -2,6 +2,7 @@ package com.example.sweater.controller;
 
 import com.example.sweater.domain.Role;
 import com.example.sweater.domain.User;
+import com.example.sweater.service.DatabaseToUsers;
 import com.example.sweater.service.UserSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -18,11 +19,14 @@ public class UserController {
     @Autowired
     private UserSevice userSevice;
 
+    @Autowired
+    private DatabaseToUsers dataBaseUsers;
+
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
     public String userList(Model model) {
         model.addAttribute("users", userSevice.findAll());
-
+        dataBaseUsers.main();
         return "userList";
     }
 
@@ -37,11 +41,8 @@ public class UserController {
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping
-    public String userSave(
-            @RequestParam String username,
-            @RequestParam Map<String, String> form,
-            @RequestParam("userId") User user
-    ) {
+    public String userSave(@RequestParam String username, @RequestParam Map<String, String> form,
+            @RequestParam("userId") User user) {
         userSevice.saveUser(user, username, form);
 
         return "redirect:/user";
@@ -56,11 +57,8 @@ public class UserController {
     }
 
     @PostMapping("profile")
-    public String updateProfile(
-            @AuthenticationPrincipal User user,
-            @RequestParam String password,
-            @RequestParam String email
-    ) {
+    public String updateProfile(@AuthenticationPrincipal User user, @RequestParam String password,
+            @RequestParam String email) {
         userSevice.updateProfile(user, password, email);
 
         return "redirect:/user/profile";

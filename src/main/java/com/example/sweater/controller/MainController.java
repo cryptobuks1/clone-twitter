@@ -3,6 +3,7 @@ package com.example.sweater.controller;
 import com.example.sweater.domain.Message;
 import com.example.sweater.domain.User;
 import com.example.sweater.repos.MessageRepo;
+import com.example.sweater.service.DatabaseToMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -28,6 +29,9 @@ public class MainController {
     @Autowired
     private MessageRepo messageRepo;
 
+    @Autowired
+    private DatabaseToMessage dataBaseMessage;
+
     @Value("${upload.path}")
     private String uploadPath;
 
@@ -49,17 +53,14 @@ public class MainController {
         model.addAttribute("messages", messages);
         model.addAttribute("filter", filter);
 
+        dataBaseMessage.main();
+
         return "main";
     }
 
     @PostMapping("/main")
-    public String add(
-            @AuthenticationPrincipal User user,
-            @Valid Message message,
-            BindingResult bindingResult,
-            Model model,
-            @RequestParam("file") MultipartFile file
-    ) throws IOException {
+    public String add(@AuthenticationPrincipal User user, @Valid Message message, BindingResult bindingResult,
+            Model model, @RequestParam("file") MultipartFile file) throws IOException {
         message.setAuthor(user);
 
         if (bindingResult.hasErrors()) {
@@ -100,12 +101,8 @@ public class MainController {
     }
 
     @GetMapping("/user-messages/{user}")
-    public String userMessges(
-            @AuthenticationPrincipal User currentUser,
-            @PathVariable User user,
-            Model model,
-            @RequestParam(required = false) Message message
-    ) {
+    public String userMessges(@AuthenticationPrincipal User currentUser, @PathVariable User user, Model model,
+            @RequestParam(required = false) Message message) {
         Set<Message> messages = user.getMessages();
 
         model.addAttribute("messages", messages);
@@ -116,14 +113,9 @@ public class MainController {
     }
 
     @PostMapping("/user-messages/{user}")
-    public String updateMessage(
-            @AuthenticationPrincipal User currentUser,
-            @PathVariable Long user,
-            @RequestParam("id") Message message,
-            @RequestParam("text") String text,
-            @RequestParam("tag") String tag,
-            @RequestParam("file") MultipartFile file
-    ) throws IOException {
+    public String updateMessage(@AuthenticationPrincipal User currentUser, @PathVariable Long user,
+            @RequestParam("id") Message message, @RequestParam("text") String text, @RequestParam("tag") String tag,
+            @RequestParam("file") MultipartFile file) throws IOException {
         if (message.getAuthor().equals(currentUser)) {
             if (!StringUtils.isEmpty(text)) {
                 message.setText(text);
